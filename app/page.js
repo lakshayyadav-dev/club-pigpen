@@ -17,15 +17,10 @@ export default function Home() {
 	const [score, setScore] = useState(0);
 	const [start, setStart] = useState(false);
 
-	const [highScore, setHighScore] = useState(0);
-	const [highScoreTime, setHighScoreTime] = useState(0);
-
 	const [time, setTime] = useState(0);
 	const [running, setRunning] = useState(false);
 
 	useEffect(() => {
-        const highScore = localStorage.getItem("highScore");
-        const highScoreTime = localStorage.getItem("highScoreTime");
 		let interval;
 		if (running) {
 			interval = setInterval(() => {
@@ -61,14 +56,6 @@ export default function Home() {
 	const stopGame = () => {
 		setStart(false);
 		setRunning(false);
-		if (score > highScore) {
-            alert("New highscore!!")
-			setHighScore(score);
-			localStorage.setItem("highScore", score);
-
-			setHighScoreTime("0" + Math.floor((time / 60000) % 60) + ":" + ("0" + Math.floor((time / 1000) % 60)).slice(-2) + ":" + ("0" + ((time / 10) % 100)).slice(-2));
-			localStorage.setItem("highScoreTime", "0" + Math.floor((time / 60000) % 60) + ":" + ("0" + Math.floor((time / 1000) % 60)).slice(-2) + ":" + ("0" + ((time / 10) % 100)).slice(-2));
-		}
 	};
 
 	return (
@@ -81,10 +68,8 @@ export default function Home() {
 
 			<div>
 				<h2>Score: {score}</h2>
-				<div className="highscoreData">
-					<h3> high score: {highScore}</h3> <h3>high score time: {highScoreTime}</h3>
-				</div>
 				<div className="numbers">
+                    Time: {" "}
 					<span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
 					<span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
 					<span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
