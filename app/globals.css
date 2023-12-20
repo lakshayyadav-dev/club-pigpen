@@ -84,3 +84,40 @@ form {
 .correctAnswerDiv p:nth-child(2) {
     margin-bottom: 30px;
 }
+
+.startGame {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    flex: 1;
+}
+
+.startBtn, .stopBtn {
+    padding: 10px;
+    font-size: 16px;
+    line-height: 26px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.startBtn {
+    background-color: green;
+    color: white;
+}
+.stopBtn {
+    background-color: red;
+    color: white;
+}
+
+.numbers {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.highscoreData {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
