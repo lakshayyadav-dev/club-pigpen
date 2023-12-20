@@ -56,10 +56,10 @@ export default function Home() {
 
 				<div className="correctAnswerDiv">
 					{isCorrect === null ? null : isCorrect ? (
-						<p className="correct">Correct!</p>
+						<p className="correct">Correct! Onto the next one!</p>
 					) : (
 						<>
-							<p className="incorrect">Incorrect!</p>
+							<p className="incorrect">Incorrect! Try again!</p>
 							{showAnswer && (
 								<p className="correctAnswer">
 									<strong>Correct Answer: </strong>
