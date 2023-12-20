@@ -1,0 +1,16 @@
+export default [
+    "You are enough just as you are.",
+    "Make each day your masterpiece.",
+    "You are your only limit.",
+    "Try to be a rainbow in someone's cloud.",
+    "What we think, we become.",
+    "You must be the change you wish to see in the world.",
+    "Every moment is a fresh beginning.",
+    "No guts, no story.",
+    "The best revenge is massive success.",
+    "The best way out is always through.",
+    "Life is what happens when you're busy making other plans.",
+    "The purpose of our lives is to be happy.",
+    "Live and let live.",
+    "The time is always right to do what is right.",
+].map(quote => quote.replace(/[.,'\/#!$%\^&\*;:{}=\-_`~()]/g,""));
