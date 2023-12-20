@@ -17,13 +17,15 @@ export default function Home() {
 	const [score, setScore] = useState(0);
 	const [start, setStart] = useState(false);
 
-	const [highScore, setHighScore] = useState(localStorage.getItem("highScore") || 0);
-	const [highScoreTime, setHighScoreTime] = useState(localStorage.getItem("highScoreTime") || 0);
+	const [highScore, setHighScore] = useState(0);
+	const [highScoreTime, setHighScoreTime] = useState(0);
 
 	const [time, setTime] = useState(0);
 	const [running, setRunning] = useState(false);
 
 	useEffect(() => {
+        const highScore = localStorage.getItem("highScore");
+        const highScoreTime = localStorage.getItem("highScoreTime");
 		let interval;
 		if (running) {
 			interval = setInterval(() => {
