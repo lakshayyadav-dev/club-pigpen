@@ -52,6 +52,8 @@ export default function Home() {
 		setTime(0);
 		setStart(true);
 		setRunning(true);
+        setTimeout(() => window.scrollBy(0,500), 1)
+		
 	};
 	const stopGame = () => {
 		setStart(false);
@@ -76,13 +78,7 @@ export default function Home() {
 			</div>
 
 			<div className="startGame">
-				<button
-					className="startBtn"
-					onClick={() => {
-						window.scrollBy(0, 300);
-						startGame();
-					}}
-				>
+				<button className="startBtn" onClick={() => startGame()}>
 					{" "}
 					Start{" "}
 				</button>
