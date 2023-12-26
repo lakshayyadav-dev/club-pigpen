@@ -69,15 +69,20 @@ export default function Home() {
 			<div>
 				<h2>Score: {score}</h2>
 				<div className="numbers">
-                    Time: {" "}
-					<span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+					Time: <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
 					<span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
 					<span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
 				</div>
 			</div>
 
 			<div className="startGame">
-				<button className="startBtn" onClick={() => startGame()}>
+				<button
+					className="startBtn"
+					onClick={() => {
+						window.scrollBy(0, 300);
+						startGame();
+					}}
+				>
 					{" "}
 					Start{" "}
 				</button>
