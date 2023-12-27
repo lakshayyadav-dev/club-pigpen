@@ -11,7 +11,7 @@ const pigpen = localFont({ src: "../font/PigpenCipher.otf" });
 
 export default function Home() {
 	const [inputText, setInputText] = useState("");
-	const [index, setIndex] = useState(0);
+	const [index, setIndex] = useState(Math.floor(Math.random() * encryptedCodes.length));
 	const [isCorrect, setIsCorrect] = useState(null);
 	const [showAnswer, setShowAnswer] = useState(false);
 	const [score, setScore] = useState(0);
@@ -29,6 +29,9 @@ export default function Home() {
 		} else if (!running) {
 			clearInterval(interval);
 		}
+        if (Math.floor((time / 1000) % 60) >= 5) {
+            stopGame();
+        }
 		return () => clearInterval(interval);
 	}, [running]);
 
