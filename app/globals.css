@@ -129,3 +129,10 @@ form {
     justify-content: space-between;
     margin-bottom: 10px;
 }
+
+.wonText {
+    color: green;
+}
+.loseText {
+    color: red;
+}

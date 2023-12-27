@@ -16,7 +16,7 @@ export default function Home() {
 	const [showAnswer, setShowAnswer] = useState(false);
 	// const [score, setScore] = useState(0);
 	const [start, setStart] = useState(false);
-	const [won, setWon] = useState(false);
+	const [won, setWon] = useState(null);
 
 	const [time, setTime] = useState(0);
 	const [running, setRunning] = useState(false);
@@ -37,13 +37,13 @@ export default function Home() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (inputText === encryptedCodes[index]) {
+		if (inputText.toLowerCase() === encryptedCodes[index].toLowerCase()) {
 			setIsCorrect(true);
 			setShowAnswer(false);
 			// setScore(score + 10);
 			setIndex(Math.floor(Math.random() * encryptedCodes.length));
 
-			if (Math.floor((time / 1000) % 60) <= 5) {
+			if (Math.floor((time / 1000) % 60) <= 45) {
 				setWon(true);
 			}
             else {
@@ -146,15 +146,15 @@ export default function Home() {
 						<h1>
 							You decipherd the message in {Math.floor((time / 1000) % 60)} seconds.
 						</h1>
-						<h1>Advance to level 2!</h1>
+						<h1 className="wonText">You win!</h1>
 					</div>
 				)}
 				{won === false && (
-					<div className="won">
+					<div className="lose">
 						<h1>
 							You decipherd the message in {Math.floor((time / 1000) % 60)} seconds.
 						</h1>
-						<h1>Try again next time!</h1>
+						<h1 className="loseText">Try again next time!</h1>
 					</div>
 				)}
 			</div>
